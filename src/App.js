@@ -1,24 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import MessageList from './components/MessageList';
 
-import getChatLog from './service';
+import { getChatLog, getMembersList } from './service';
 
 import './App.css';
 
 class App extends Component {
+  componentWillMount() {
+    this.props.getChatLog();
+    this.props.getMembersList();
+  }
+
   render() {
     return (
-      <h1>Hello!</h1>
+      <div>
+        <h1>Sky NowTV Test</h1>
+        <MessageList
+          messages={this.props.messages}
+          members={this.props.members}
+        />
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    messages: state.messages || [],
+    members: state.members || []
+  };
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({ getChatLog }, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ getMembersList, getChatLog }, dispatch);
 
 export default connect(
   mapStateToProps,
