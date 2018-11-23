@@ -4,7 +4,7 @@ import App from './App';
 
 function noop() {}
 
-function fakeApp(getChatLog, getMembersList) {
+function AppComponent(getChatLog, getMembersList) {
   return (
     <App.WrappedComponent
       getChatLog={getChatLog}
@@ -20,5 +20,5 @@ function renderApp(app) {
 }
 
 it('should render without crashing', () => {
-  renderApp(fakeApp(noop, noop));
+  renderApp(AppComponent(noop, noop));
 });

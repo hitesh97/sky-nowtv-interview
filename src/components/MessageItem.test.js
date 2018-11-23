@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MessageItem from './MessageItem';
 
-
-function fakeComp(text, email, avatar, timestamp) {
+function MessageItemComponent(text, email, avatar, timestamp) {
   return (
     <MessageItem
       text={text}
@@ -21,11 +20,13 @@ function renderMessageItem(comp) {
 }
 
 it('formats the timestamp', () => {
-  const text = "some text"
-      , email = "some email"
-      , avatar = "some avatar"
-      , timestamp = "2016-11-09T05:04:58Z"
+  const text = 'some text',
+    email = 'some email',
+    avatar = 'some avatar',
+    timestamp = '2016-11-09T05:04:58Z';
 
-  const x = renderMessageItem(fakeComp(text, email, avatar, timestamp));
-  expect(x.innerHTML).toContain("Wed, 09 Nov 2016 05:04:58 GMT");
+  const x = renderMessageItem(
+    MessageItemComponent(text, email, avatar, timestamp)
+  );
+  expect(x.innerHTML).toContain('Wed, 09 Nov 2016 05:04:58 GMT');
 });
