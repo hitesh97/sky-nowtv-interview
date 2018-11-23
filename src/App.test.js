@@ -22,3 +22,8 @@ function renderApp(app) {
 it('should render without crashing', () => {
   renderApp(AppComponent(noop, noop));
 });
+
+it('should contain title ', () => {
+  const x = renderApp(AppComponent(noop, noop));
+  expect(x.innerHTML).toContain('Sky NowTV Test');
+});
