@@ -19,11 +19,13 @@ function renderApp(app) {
   return div;
 }
 
-it('should render without crashing', () => {
-  renderApp(AppComponent(noop, noop));
-});
+describe('<App />', () => {
+  it('should render without crashing', () => {
+    renderApp(AppComponent(noop, noop));
+  });
 
-it('should contain title ', () => {
-  const x = renderApp(AppComponent(noop, noop));
-  expect(x.innerHTML).toContain('Sky NowTV Test');
+  it('should contain title ', () => {
+    const x = renderApp(AppComponent(noop, noop));
+    expect(x.innerHTML).toContain('Sky NowTV Test');
+  });
 });

@@ -1,7 +1,5 @@
 # NowTV React Interview
 
-![NowTV](./logo.png)
-
 A simple React + Redux project to retrieve, render and manipulate data returned from an API.
 
 ## Commands
@@ -19,7 +17,7 @@ Feel free to create new files to help you complete these tasks. Additional depen
 
 It has two publically exposed functions `getMessages` and `getMembers`. Your tasks will be to add further logic to display and manipulate the data returned from these functions, without modifying `data.js`
 
-`service.js` currently consumes `data.js` to retrieve a list of messages, and put them into the redux store. 
+`service.js` currently consumes `data.js` to retrieve a list of messages, and put them into the redux store.
 
 Do not modify `data.js` to achieve these tasks, and do not worry about the styling. Code addition should be unit tested.
 

@@ -19,14 +19,16 @@ function renderMessageItem(comp) {
   return div;
 }
 
-it('formats the timestamp', () => {
-  const text = 'some text',
-    email = 'some email',
-    avatar = 'some avatar',
-    timestamp = '2016-11-09T05:04:58Z';
+describe('<MessageItem />', () => {
+  it('formats the timestamp', () => {
+    const text = 'some text',
+      email = 'some email',
+      avatar = 'some avatar',
+      timestamp = '2016-11-09T05:04:58Z';
 
-  const x = renderMessageItem(
-    MessageItemComponent(text, email, avatar, timestamp)
-  );
-  expect(x.innerHTML).toContain('Wed, 09 Nov 2016 05:04:58 GMT');
+    const x = renderMessageItem(
+      MessageItemComponent(text, email, avatar, timestamp)
+    );
+    expect(x.innerHTML).toContain('Wed, 09 Nov 2016 05:04:58 GMT');
+  });
 });
